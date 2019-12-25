@@ -1,2 +1,2 @@
 # Gaukilator
-Calculator
+Calculator, the Terminator!
