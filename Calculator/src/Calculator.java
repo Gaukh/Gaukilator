@@ -9,52 +9,46 @@ public class Calculator {
 
     public static void SimpleCalculation() {
 
-        String inputChar;
-        double input1num;
-        String input1let;
-        char operator;
-        double input2num;
+        String inchar;
+        double innum1;
+        String inlet1;
+        char op;
+        double innum2;
 
         Scanner myCalc = new Scanner(System.in);
         Scanner myLet = new Scanner(System.in);
         Scanner myOp = new Scanner(System.in);
 
         System.out.println("What do you want to calculate with? Numbers or letters? Type l for letter and n for number");
-        inputChar = myLet.next();
+        inchar = myLet.next();
 
-        switch (inputChar) { //Decides whether n or l shall be used.
+        switch (inchar) { //Decides whether n or l shall be used.
             case "n": { //Stands for number, if you solely want to calculate with numbers.
 
                 System.out.println("Enter your first digit(s):");
-                input1num = myCalc.nextInt();
+                innum1 = myCalc.nextInt();
 
                 System.out.println("Enter +, -, *, or / below:");
-                operator = myOp.next().charAt(0);
+                op = myOp.next().charAt(0);
 
                 System.out.println("Enter your second digit(s):");
-                input2num = myCalc.nextDouble();
+                innum2 = myCalc.nextDouble();
 
-                switch (operator) { //Choose addition, subtraction, multiplication or division.
+                switch (op) { //Choose addition, subtraction, multiplication or division.
                     case '+': //Addition
-                        if (operator == '+') {
-                            System.out.println(input1num + input2num);
-                        }
+                        System.out.println(innum1 + innum2);
                         break;
                     case '-': //Subtraction
-                        if (operator == '-') {
-                            System.out.println(input1num - input2num);
-                        }
+                        System.out.println(innum1 - innum2);
                         break;
                     case '*': //Multiplication
-                        if (operator == '*') {
-                            System.out.println(input1num * input2num);
-                        }
+                        System.out.println(innum1 * innum2);
                         break;
                     case '/': //Division
-                        if (operator == '/' && input2num == 0) {
+                        if (innum2 == 0) {
                             System.out.println("You can't divide by zero.");
-                        } else if (operator == '/' && input2num != 0) {
-                            System.out.println(input1num / input2num);
+                        } else if (innum2 != 0) {
+                            System.out.println(innum1 / innum2);
                         }
                         break;
                     default:
@@ -66,18 +60,18 @@ public class Calculator {
 
             case "l": { //Stands for letter, if you want to calculate with a letter assigned calculation method.
                 System.out.println("Enter your letter you want to calculate with:");
-                input1let = myLet.next();
+                inlet1 = myLet.next();
 
-                switch (input1let) {
+                switch (inlet1) {
                     case "f": //Factorial calculation
                         int facul = 1;
                         int result;
 
                         System.out.println("Enter your digit(s):");
-                        input2num = myCalc.nextDouble();
+                        innum2 = myCalc.nextDouble();
 
-                        for (input2num = input2num; input2num > 0; input2num--) {
-                            facul = (int) (facul * input2num);
+                        for (innum2 = innum2; innum2 > 0; innum2--) {
+                            facul = (int) (facul * innum2);
                         }
                         System.out.println("Sum: " + facul);
                 }
