@@ -74,18 +74,19 @@ public class Calculator {
                 input1let = myLet.next();
 
                 switch (input1let) {
-                    case "f":
-                        int i;
+                    case "f": //Factorial calculation
                         int result;
-                        for (i = 3; i > 0; i--) {
-                            result = i * i - 1;
-                            System.out.println(result);
+                        System.out.println("Enter your digit(s):");
+                        input2num = myCalc.nextDouble();
+                        for (input2num = input2num; input2num > 0; --input2num) {
+                            result = (int) (--input2num * input2num);
+                            result = (int) (result + input2num);
+                            System.out.println("Result: " + result);
                     }
 
                 }
 
-                System.out.println("Enter your digit(s):");
-                input2num = myCalc.nextDouble();
+
                 break;
             }
 
