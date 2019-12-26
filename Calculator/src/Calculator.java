@@ -3,15 +3,13 @@ import java.util.Scanner;
 public class Calculator {
 
     public static void main(String[] args) {
-
         SimpleCalculation();
+
     }
 
     public static void SimpleCalculation() {
 
         String inputChar;
-        char n;
-        char l;
         double input1num;
         String input1let;
         char operator;
@@ -24,9 +22,8 @@ public class Calculator {
         System.out.println("What do you want to calculate with? Numbers or letters? Type l for letter and n for number");
         inputChar = myLet.next();
 
-        switch (inputChar) {
-
-            case "n": {
+        switch (inputChar) { //Decides whether n or l shall be used.
+            case "n": { //Stands for number, if you solely want to calculate with numbers.
 
                 System.out.println("Enter your first digit(s):");
                 input1num = myCalc.nextInt();
@@ -37,25 +34,25 @@ public class Calculator {
                 System.out.println("Enter your second digit(s):");
                 input2num = myCalc.nextDouble();
 
-                switch (operator) {
-                    case '+':
+                switch (operator) { //Choose addition, subtraction, multiplication or division.
+                    case '+': //Addition
                         if (operator == '+') {
                             System.out.println(input1num + input2num);
                         }
                         break;
-                    case '-':
+                    case '-': //Subtraction
                         if (operator == '-') {
                             System.out.println(input1num - input2num);
                         }
                         break;
-                    case '*':
+                    case '*': //Multiplication
                         if (operator == '*') {
                             System.out.println(input1num * input2num);
                         }
                         break;
-                    case '/':
+                    case '/': //Division
                         if (operator == '/' && input2num == 0) {
-                            System.out.println("You can't divide by zero, idiot.");
+                            System.out.println("You can't divide by zero.");
                         } else if (operator == '/' && input2num != 0) {
                             System.out.println(input1num / input2num);
                         }
@@ -67,7 +64,7 @@ public class Calculator {
                 break;
             }
 
-            case "l": {
+            case "l": { //Stands for letter, if you want to calculate with a letter assigned calculation method.
                 System.out.println("Enter your letter you want to calculate with:");
                 input1let = myLet.next();
 
