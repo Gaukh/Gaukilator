@@ -1,8 +1,6 @@
-import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Calculator {
-
 
     public static void main(String[] args) {
 
@@ -75,30 +73,22 @@ public class Calculator {
 
                 switch (input1let) {
                     case "f": //Factorial calculation
+                        int facul = 1;
                         int result;
+
                         System.out.println("Enter your digit(s):");
                         input2num = myCalc.nextDouble();
-                        for (input2num = input2num; input2num > 0; --input2num) {
-                            result = (int) (--input2num * input2num);
-                            result = (int) (result + input2num);
-                            System.out.println("Result: " + result);
-                    }
 
+                        for (input2num = input2num; input2num > 0; input2num--) {
+                            facul = (int) (facul * input2num);
+                        }
+                        System.out.println("Sum: " + facul);
                 }
-
-
                 break;
             }
 
             default:
                 break;
-
         }
-
-
-        try {
-
-        } catch (InputMismatchException ime) {
-            System.out.println("No letters allowed, this is a simple calculator you fuckyducky."); }
     }
 }
