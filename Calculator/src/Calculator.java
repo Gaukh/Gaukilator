@@ -19,19 +19,19 @@ public class Calculator {
         Scanner myLet = new Scanner(System.in);
         Scanner myOp = new Scanner(System.in);
 
-        System.out.println("What do you want to calculate with? Numbers or letters? Type l for letter and n for number");
+        System.out.print("What do you want to calculate with? Numbers or letters? Type l for letter and n for number: ");
         inchar = myLet.next();
 
         switch (inchar) { //Decides whether n or l shall be used.
             case "n": { //Stands for number, if you solely want to calculate with numbers.
 
-                System.out.println("Enter your first digit(s):");
+                System.out.print("Enter your first digit(s): ");
                 innum1 = myCalc.nextInt();
 
-                System.out.println("Enter +, -, *, or / below:");
+                System.out.print("Enter +, -, *, or / below: ");
                 op = myOp.next().charAt(0);
 
-                System.out.println("Enter your second digit(s):");
+                System.out.print("Enter your second digit(s): ");
                 innum2 = myCalc.nextDouble();
 
                 switch (op) { //Choose addition, subtraction, multiplication or division.
@@ -59,7 +59,7 @@ public class Calculator {
             }
 
             case "l": { //Stands for letter, if you want to calculate with a letter assigned calculation method.
-                System.out.println("Enter your letter you want to calculate with:");
+                System.out.print("Enter your letter you want to calculate with: ");
                 inlet1 = myLet.next();
 
                 switch (inlet1) {
@@ -67,19 +67,35 @@ public class Calculator {
                         int facul = 1;
                         int result;
 
-                        System.out.println("Enter your digit(s):");
+                        System.out.print("Enter your digit(s): ");
                         innum2 = myCalc.nextDouble();
 
                         for (innum2 = innum2; innum2 > 0; innum2--) {
                             facul = (int) (facul * innum2);
                         }
                         System.out.println("Sum: " + facul);
-                }
-                break;
-            }
+                        break;
 
+                    case "r":
+                        System.out.print("Type the digit you want to know the root of: ");
+                        innum2 = myCalc.nextDouble();
+                        boolean isRoot = false;
+
+                        for (int i = 0; i < innum2; i++) {
+
+                            if (i * i == innum2) {
+                                System.out.println(i);
+                                isRoot = true;
+                            } else if (i * i == innum2 && i * i < innum2) {
+                                System.out.println("Root of digit not possible.");
+                            }
+                        }
+                        break;
+                }
+            }
             default:
                 break;
         }
     }
 }
+
