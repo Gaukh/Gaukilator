@@ -86,7 +86,7 @@ public class Calculator {
                             if (i * i == innum2) {
                                 System.out.println(i);
                                 isRoot = true;
-                            } else if (i * i == innum2 && i * i < innum2) {
+                            } else if (i * i != innum2) {
                                 System.out.println("Root of digit not possible.");
                             }
                         }
